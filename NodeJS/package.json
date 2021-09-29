@@ -1,0 +1,25 @@
+{
+  "name": "clone_jb",
+  "version": "1.0.0",
+  "description": "CloneCoding with RodaitCompany",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xenx96/clone_jb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xenx96/clone_jb/issues"
+  },
+  "homepage": "https://github.com/xenx96/clone_jb#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "forever": "^4.0.1",
+    "nodemon": "^2.0.13"
+  }
+}
