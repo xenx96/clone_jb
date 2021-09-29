@@ -5,7 +5,7 @@
   - Front-End
     + https://github.com/xenx96/clone_jb (미정)
   - Back-End
-    + https://github.com/xenx96/clone_jb (JavaSpringBoot)
+    + https://github.com/xenx96/clone_jb (Node.JS)
     
 ***
 ## 개발 서버 현황
