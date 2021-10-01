@@ -3,7 +3,7 @@
 - 참여 목적 : 새로운 프레임워크 체험 및 개발자 개인의 역량 향상을 위한 클론코딩   
 * Folder 
   - Front-End
-    + https://github.com/xenx96/clone_jb (미정)
+    + https://github.com/xenx96/clone_jb (Publish)
   - Back-End
     + https://github.com/xenx96/clone_jb (Node.JS)
     
@@ -12,7 +12,7 @@
 * Dev Web 
   - 테스트 서버
     + http://localhost:? (Node.JS)
-    + http://localhost:? (Publish)
+    + http://localhost:? (미정)
 * DataBase
   - 테스트 서버
     + 구매 예정
