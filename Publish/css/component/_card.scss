@@ -1,0 +1,213 @@
+/* bootstrap 기준 Card */
+.theme-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #FFFFFF;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 15px 15px 10px 10px;
+	
+	/* card */
+	.card-detail {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		color: #444444;
+	}
+	
+	.card-title {
+		color: #444444;
+		font-weight: 600;
+		text-align: left;
+		font-size: 1.25em;
+	}
+
+	.theme-card-header {
+		padding: 0.75rem 1.88rem;
+		margin: 0;
+		background-color: #E0EFEF;
+		display: flex;
+		display: -webkit-flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		border-radius: 15px 15px 0 0;
+		
+		.theme-card-title {
+			margin: 0;
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+		
+		button {
+			font-size: 1.16em;
+			color: #3A675A;
+			
+			&::after {
+				position: absolute;
+				display: inline-block;
+				content: "";
+				background-image: url("../images/chevron-right.png");
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 6px;
+				height: 10px;
+				right: 25px;
+				top: 24px;
+			}
+		}
+	}
+	
+	.theme-card-body {
+		flex: 1 1 auto;
+		padding: 1.25rem;
+	}
+	
+	.theme-no-padding {
+		padding: 0;
+		
+		.theme-contents {
+			background: #FFFFFF;
+			padding: 0.44rem;
+			border-radius: 0 0 10px 10px;
+			
+			/* list group */
+			.list-group-item {
+				position: relative;
+				display: block;
+				padding: .6rem 1.38rem;
+				margin: 0 0 -1px;
+				background-color: #fff;
+				border: 1px solid rgba(0, 0, 0, .125);	
+			}
+			
+			.list-group {
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				padding: 0;
+				margin: 0;
+				
+				.list-group-item {
+					display: flex;
+					align-items: center;
+					border-width: 1px 0;
+					border-color: #ebecec;
+					font-weight: 400;
+					
+					&:last-child {
+						border-bottom: 0;
+					}
+					
+					&:first-child {
+						border-top: 0;
+					}
+					
+					span {
+						position: relative;
+						overflow: hidden;
+						font-size: 1.17em;
+						
+						&::before {
+							content: "";
+							position: absolute;
+							bottom: 0;
+							left: 50%;
+							width: 0;
+							transition: left .3s, width .3s;
+							border-bottom: 2px solid #658BD3;
+						}
+						
+						&.badges {
+							&::before {
+								display: none;
+							}
+						}
+					}
+					
+					&:hover {
+						cursor: pointer;
+						
+						span {
+							&::before {
+								left: 0;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+			
+			.list-group-bordered {
+				.list-group-item {
+					&.active {
+						background: #4DABF6;
+						border-color: #4DABF6;
+					}
+				}
+			}
+		}
+	}
+	
+	.theme-card-footer {
+		padding: .5rem 1rem;
+		background-color: #FFFFFF;
+		border-top: 1px solid rgba(0, 0, 0, .125);
+		
+		&:last-child {
+			border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+		}
+	}
+}
+
+.card-radius {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+/* dashboard 그림자 있는 카드 형태 */
+.theme-shadow-card {
+	
+	&.full-height {
+		height: calc(100% - 10px);
+	}
+	
+	box-shadow: 0 3px 10px rgba(0, 0, 0, .12);
+	border-radius: 10px;
+	border: 0;
+	
+	.theme-no-padding {
+		.theme-contents {
+			padding: 0;
+		}
+	}
+	
+	.theme-card-body {
+		padding: 2.5rem;
+		border-radius: 10px;
+		
+		&.similar-color {
+			background-color: #DFF0F5;
+		}
+		
+	}
+}
+
+/* 700px */
+@media all and (min-width: 700px) {
+	
+}
+
+/* 1060px */
+@media all and (min-width: 1060px) {
+	
+}
+
+/* 1439px */
+@media all and (min-width: 1439px) {
+	
+}

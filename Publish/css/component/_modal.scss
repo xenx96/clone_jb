@@ -1,0 +1,181 @@
+.theme-modal {
+	
+	.modal-dialog {
+		position: relative !important;
+	}
+	
+	
+	.modal-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		pointer-events: auto;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 0;
+		border-radius: 20px;
+		outline: 0;
+	}
+	
+	.modal-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.25rem 2rem;
+		border-color: transparent;
+		border-bottom: 0;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		height: auto;
+		
+		
+		.close {
+			cursor: pointer;
+			float: none;
+			align-items: center;
+			border-radius: 0;
+			color: #000;
+			display: inline-flex;
+			font-size: 1rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			justify-content: center;
+			opacity: 1;
+			text-align: center;
+			transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+			padding: 0.75rem;
+			margin: 0;
+			
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+	
+	.modal-title {
+		font-size: 1.5em;
+		font-weight: bold;
+		flex-grow: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-bottom: 0;
+		line-height: 1.5;
+	}
+	
+	.modal-body {
+		position: relative;
+		flex: 1 1 auto;
+		padding: 1.75rem 2rem;
+	}
+	
+	.modal-footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0.75rem 2rem;
+		border-top: 0;
+		border-bottom-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+	}
+	
+	.modal-footer > :not(:first-child) {
+		margin-left: .25rem;
+	}
+	
+	.modal-footer > :not(:last-child) {
+		margin-right: .25rem;
+	}
+	
+	
+	
+	&.default {
+		.modal-content {
+			background-color: #f9f9f9;
+		}
+		
+		.modal-header {
+			background-color: #3685E4;
+			border-color: transparent;
+			
+			> * {
+				color: #f9f9f9;
+			}
+			
+			svg {
+				fill: #f9f9f9;
+			}
+		}
+	}
+	
+	&.view {
+		.modal-content {
+			background-color: #32383D;
+			opacity: .93;
+		}
+		
+		.modal-header {
+			background-color: transparent;
+			border-color: transparent;
+			
+			&:after {
+				border-bottom: 2px solid #868D8F;
+				content: '';
+				width: calc(100% - 4rem);
+				position: absolute;
+				top: 66px;
+			}
+			
+			> * {
+				color: #f9f9f9;
+			}
+			
+			svg {
+				fill: #f9f9f9;
+			}
+		}
+		
+		.modal-body {
+			padding: 2rem;
+			
+			* {
+				color: #f9f9f9 !important;
+			}
+		}
+		
+		.modal-footer {
+			&:after {
+				border-bottom: 2px solid #868D8F;
+				content: '';
+				width: calc(100% - 4rem);
+				position: absolute;
+				bottom: 63px;
+			}
+		}
+	}
+}
+
+/* liferay aui */
+/* 버튼 오른쪽으로 배치 시, 해당, 버튼에 ml-auto 추가 */
+.dialog-iframe-modal {
+	.modal-footer {
+		.btn-toolbar-content {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.theme-modal {
+		.modal-dialog {
+			//
+		}
+	}
+}
+
+
+
+@media all and (min-width: 1060px) {
+}

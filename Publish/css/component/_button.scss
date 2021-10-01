@@ -1,0 +1,691 @@
+/* shared component: button */
+/* button-group --> theme-button-group */
+.theme-button-group,
+.button-group {
+	display: flex;
+	position: sticky;
+	position: -webkit-sticky;
+	flex-wrap: wrap;
+
+	.button-group-right {
+		margin-left: auto;
+	}
+}
+
+/* button 기본 */
+.button {
+	display: inline-block;
+	font-weight: 600;
+	color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1.17em;
+	line-height: 1.5;
+	border-radius: 3px;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	cursor: pointer;
+	
+	/* disabled */
+	&.disabled,
+	&:disabled {
+		opacity: .65;
+	}
+	
+	&.btn-detail-search {
+		font-size: 1.25em;
+		padding: 0.19rem 3.39rem 0.19rem 1.32rem;
+		border: 1px solid #3D76DC;
+		border-radius: 25px;
+		background-color: transparent;
+		color: #063E3B;
+		display: inline-block;
+		position: relative;
+		
+		&:hover {
+			border-color: #1BACC0;
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 12px;
+			right: 16px;
+			display: inline-block;
+			width: 7px;
+			height: 5px;
+			color: #000000;
+			background: url(../images/footer/select_arrow.png) no-repeat;
+		}
+	}
+}
+
+/* round */
+.button-round {
+	border-radius: 60px;
+}
+
+/* small */
+.button-sm {
+	padding: .25rem .6rem;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+/* large */
+.button-lg {
+	padding: .5rem 1.2rem;
+	font-size: 1.25em;
+	line-height: 1.5;
+}
+
+/* 버튼 아이콘 */
+.button-icon {
+/*	padding: .65rem 1.4rem;*/
+	.button-label {
+		display: inline-block;
+	}
+	
+	.button-text {
+		display: none;
+	}
+}
+
+
+/* block (100%) */
+.button-block {
+	display: block;
+	width: 100%;
+}
+
+/* static */
+.button-static {
+	width: auto;
+}
+
+.button-static-sm {
+	min-width: 80px;
+}
+
+.theme-button-select {
+	position: relative;
+	cursor: pointer;
+	
+	.button-select-list {
+		position: absolute;
+		width: 100%;
+		cursor: pointer;
+		border: 1px solid #DDDDDD;
+	}
+}
+
+/* color */
+/*
+ * 가변적으로 light, black, soft 값 지정
+ * 
+ * light: light 값
+ * black: black 값 
+ * soft: soft 값
+ *
+ */
+
+$common: #3D76DC !default;
+$continue: #BE3BDE !default;
+$process: #FFAD46 !default;
+$table: #1BACC0 !default;
+$search: #48ABB4 !default;
+$export: #58C6AD !default;
+$search-koma: #F26E50 !default;
+$light: #F9F9F9 !default;
+$black: #000000 !default;
+$reply: #525D5D !default;
+$link: transparent !default;
+$gray: #ced4da !default;
+$white:	#ffffff !default;
+
+$val_light: 10%;
+$val_soft: 20%;
+$val_dark: 30%;
+
+
+$colors: () !default;
+$colors: map-merge(
+	(
+		"common"				:		$common,
+		"common-light"			:		lighten($common, $val_light),
+		"common-dark"			:		darken($common, $val_dark),
+		"soft-common"			:		lighten($common, $val_soft),
+		"process"				:		$process,
+		"process-light"			:		lighten($process, $val_light),
+		"process-dark"			:		darken($process, $val_dark),
+		"soft-process"			:		lighten($process, $val_soft),
+		"continue"				:		$continue,
+		"continue-light"		:		lighten($continue, $val_light),
+		"continue-dark"			:		darken($continue, $val_dark),
+		"soft-success"			:		lighten($continue, $val_soft),
+		"table"					:		$table,
+		"table-light"			:		lighten($table, $val_light),
+		"table-dark"			:		darken($table, $val_dark),
+		"soft-table"			:		lighten($table, $val_soft),
+		"search"				:		$search,
+		"search-light"			:		lighten($search, $val_light),
+		"search-dark"			:		darken($search, $val_dark),
+		"soft-search"			:		lighten($search, $val_soft),
+		"export"				:		$export,
+		"export-light"			:		lighten($export, $val_light),
+		"export-dark"			:		darken($export, $val_dark),
+		"soft-export"			:		lighten($export, $val_soft),
+		"search-koma"			:		$search-koma,
+		"search-koma-light"		:		lighten($search-koma, $val_light),
+		"search-koma-dark"		:		darken($search-koma, $val_dark),
+		"soft-search-koma"		:		lighten($search-koma, $val_soft),
+		"light"					:		$light,
+		"light-light"			:		lighten($light, $val_light),
+		"light-dark"			:		darken($light, $val_dark),
+		"soft-light"			:		lighten($light, $val_soft),
+		"black"					:		$black,
+		"black-light"			:		lighten($black, $val_light),
+		"black-dark"			:		darken($black, $val_dark),
+		"reply"					:		$reply,
+		"reply-light"			:		lighten($reply, $val_light),
+		"reply-dark"			:		darken($reply, $val_dark),
+		"soft-reply"			:		lighten($reply, $val_soft),
+		"link"					:		$link,
+		"gray"					:		$gray,
+		"white"					:		$white,
+		"white-light"			:		lighten($white, $val_light),
+		"white-dark"			:		darken($white, $val_dark)
+	),
+	$colors
+);
+
+@mixin setText($bg) {
+	@if (lightness($bg) > 70) {
+		color: #444 !important;
+	} @else if ($bg == transparent) {
+		color: #444 !important;
+	} @else {
+		color: #fff !important;
+	}
+}
+
+@mixin btn-border($color) {
+	@if ($color == light) {
+		background: #ffffff !important;
+		border: 1px solid #DDDDDD;
+	} @else {
+		color: $color !important;
+		border: 1px solid $color !important;
+	}
+}
+
+@mixin setBg($bg) {
+	background: darken($bg, $val_soft) !important;
+	border: 1px solid darken($bg, $val_soft) !important;
+}
+
+@each $color, $colorValue in $colors {
+	/* 버튼 */
+	.btn-#{$color} {
+		background: #{$colorValue} !important;
+		border: 1px solid #{$colorValue} !important;
+		@include setText($colorValue);
+										
+		&:hover,
+		&:focus,
+		&:disabled {
+			@include setBg($colorValue);
+		}
+		
+		&:disabled {
+			transition: .3s;
+			pointer-events: none;
+			cursor: not-allowed;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			opacity: .65;
+		}
+	}
+	
+	.btn-outline-#{$color} {
+		border-color: #{$colorValue} !important;
+		color: #444444 !important;
+		background: #ffffff !important;
+		
+		&:hover,
+		&:focus,
+		&:disabled {
+			@include setText($colorValue);
+			background-color: #{$colorValue} !important;
+			border-color: #{$colorValue} !important;
+		}
+	}
+	
+	.btn-border {
+		background: $link !important;
+		
+		&:hover,
+		&:focus {
+			background: $link !important;
+		}
+		
+		&.btn-#{$color} {
+			@include btn-border($colorValue);
+		}
+	}
+	
+	/* 선 */
+	.border-#{$color} {
+		border-color: #{$colorValue} !important;
+	}
+	
+	/* 배경 */
+	.bg-#{$color} {
+		background: #{$colorValue} !important;
+		@include setText($colorValue);
+	}
+}
+
+
+/* badges */
+.badges {
+	border-radius: 15px;
+	margin-left: auto;
+	line-height: 1;
+	padding: .3rem .65rem;
+	vertical-align: middle;
+	font-weight: 400;
+	border: 1px solid #DDDDDD;
+	color: #444444;
+	background-color: #F2F3E8;
+	font-size: 1em;
+	display: inline-block;
+	text-align: center;
+	
+	&.badges-common {
+		background-color: #658BD3;
+		/*background-color: #4DABF6;*/
+		color: #FFFFFF;
+		border: none;
+	}
+	
+	&.badges-table {
+		background-color: #14C7C0;
+		color: #FFFFFF;
+		border: none;
+	}
+	
+	&.badges-process {
+		background-color: #F69618;
+		color: #FFFFFF;
+		border: none;
+	}
+}
+
+.badges-static {
+	min-width: 54px;
+}
+
+/* switch */
+.form-check {
+	display: flex;
+	align-items: center;
+}
+
+.form-check-label {
+	font-size: 1.15em;
+	color: #444444;
+	font-weight: 600;
+}
+
+.form-check-input {
+	vertical-align: top;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border: 1px solid rgba(0, 0, 0, .25);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-print-color-adjust: exact;
+
+	&:checked {
+		background-color: #3D76DC;
+		/*border-color: #3D76DC;*/
+		border: 1px solid rgba(0, 0, 0, 0.25);
+	}
+	
+	&:checked[type=checkbox] {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+	}
+}
+
+/* toggle */
+/* toggle checkbox */
+@mixin can-toggle-branding(
+	$can-toggle-off-color: #555, 
+	$can-toggle-on-color: #3D76DC,
+	$can-toggle-inactive-text: rgba(#FFFFFF, 0.5),
+	$can-toggle-transition: cubic-bezier(0, 1, 0.5, 1)
+) {
+		input[type="checkbox"] {
+			&[disabled] ~ label {
+				color: rgba($can-toggle-off-color, 0.5);
+		}
+	
+		&:focus ~ label, &:hover ~ label {
+			.toggle-check__switch {
+				background-color: $can-toggle-off-color;
+				
+				&:after { 
+					color: darken($can-toggle-off-color, 10%); 
+				}
+			}
+		}
+	
+		&:hover ~label { 
+			color: darken($can-toggle-off-color, 5%);
+		}
+		
+		&:checked {
+			~ label {
+				&:hover { 
+					/*color: darken($can-toggle-on-color, 3%); */
+				}
+			
+				.toggle-check__switch {
+					background-color: lighten($can-toggle-on-color, 5%);
+					&:after { 
+						color: darken($can-toggle-on-color, 5%); 
+					}
+				}
+			}
+		
+			&:focus, 
+			&:hover {
+				~ label {
+					.toggle-check__switch {
+						background-color: $can-toggle-on-color;
+					
+						&:after { 
+							color: darken($can-toggle-on-color, 10%);
+						}
+					}
+				} 
+			}
+		}
+	}
+
+	label {
+		.toggle-check__label-text { 
+			margin: 0 1rem 0 0;
+			font-size: 1em;
+			font-weight: 600;
+			color: #444444;
+		}
+	
+		.toggle-check__switch {
+			transition: background-color 0.3s $can-toggle-transition;
+			background: lighten($can-toggle-off-color, 5%);
+			
+			&:before { 
+				color: $can-toggle-inactive-text; 
+			}
+			
+			&:after {
+				// Autoprefixer choked here, so making the prefixes explicit
+				-webkit-transition: -webkit-transform 0.3s $can-toggle-transition;
+				transition: transform 0.3s $can-toggle-transition;
+				color: $can-toggle-off-color; 
+			}
+		}
+	}
+}
+
+/* 기본 toggle box */
+@mixin can-toggle-appearance 
+( 
+	$can-toggle-width: 120px,
+	$can-toggle-height: 30px,
+	$can-toggle-border-radius: 4px,
+	$can-toggle-offset: 2px,
+	$can-toggle-label-font-size: 14px,
+	$can-toggle-switch-font-size: 12px,
+	$can-toggle-shadow: 0 3px 3px rgba(#444444, 0.4)
+) {
+	$can-toggle-switch-width: $can-toggle-width/2;
+
+	input[type="checkbox"] {
+		&:focus ~ label, 
+		&:hover ~ label {
+			.toggle-check__switch {
+				&:after { 
+					box-shadow: $can-toggle-shadow; 
+				} 
+			}
+		}
+
+		&:checked {
+			~ label {
+				.toggle-check__switch {
+					&:after { 
+						transform: translate3d($can-toggle-width - ($can-toggle-switch-width + $can-toggle-offset), 0, 0); 
+					}
+				}
+			}
+			
+			&:focus, 
+			&:hover {
+				~ label {
+					.toggle-check__switch { 
+						&:after { 
+							box-shadow: $can-toggle-shadow; 
+						} 
+					}
+				} 
+			}
+		}
+	}
+  
+	label {
+		font-size: $can-toggle-label-font-size;
+		
+		.toggle-check__switch {
+			height: $can-toggle-height;
+			flex: 0 0 $can-toggle-width;
+			border-radius: $can-toggle-border-radius;
+			
+			&:before {
+				left: $can-toggle-width/2;
+				font-size: $can-toggle-switch-font-size; 
+				line-height: $can-toggle-height;
+				width: $can-toggle-width/2;
+				padding: 0 12px;
+			}
+
+			&:after {
+				top: $can-toggle-offset; left: $can-toggle-offset;
+				border-radius: $can-toggle-border-radius/2;
+				width: $can-toggle-switch-width - $can-toggle-offset; 
+				line-height: $can-toggle-height - ($can-toggle-offset*2);
+				font-size: $can-toggle-switch-font-size;
+			}
+
+			&:hover {
+				&:after { 
+					box-shadow: $can-toggle-shadow; 
+				}
+			}
+		} 
+	}
+}
+
+.theme-toggle-check {
+	position: relative;
+	
+	*, 
+	*:before, 
+	*:after { 
+		box-sizing: border-box; 
+	}
+	
+	input[type="checkbox"] {
+		opacity: 0;
+		position: absolute;
+		top: 0; 
+		left: 0;
+		
+		&[disabled] ~ label {
+			pointer-events: none;
+			
+			.toggle-check__switch { 
+				opacity: 0.4; 
+			}
+		}
+
+		&:checked {
+			~ label {
+				.toggle-check__switch {
+					&:before {
+						content: attr(data-unchecked);
+						left: 0;
+					}
+					&:after {
+						content: attr(data-checked);
+					}  
+				}
+			}
+	
+			&:focus,
+			&:hover {
+				~ label {
+					
+				} 
+			}
+		}
+	}
+
+	label {
+		user-select: none;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.toggle-check__label-text { 
+			/*padding-left: 32px;*/
+		}
+		
+		.toggle-check__switch {
+			position: relative;
+	
+			&:before {
+				content: attr(data-checked);
+				position: absolute;
+				top: 0;
+				text-transform: uppercase;
+				text-align: center;
+			}
+	
+			&:after {
+				content: attr(data-unchecked);
+				position: absolute;
+				z-index: 5;
+				text-transform: uppercase;
+				text-align: center;
+				background: #FFFFFF;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+	
+	// Default values for .can-toggle class
+	@include can-toggle-branding; 
+	@include can-toggle-appearance; 
+	
+	// Create toggles of different sizes by overriding the can-toggle-appearance mixin defaults
+	&.small {
+		@include can-toggle-appearance
+		(
+			90px, // Toggle width
+			23px,  // Toggle height
+			2px,   // Toggle border radius
+			1px,   // Offset (distance btw switch and box)
+			13px,  // Label font size
+			10px,  // Switch font size
+			0 2px 2px rgba(black, 0.4) // Switch shadow on hover/focus
+		); 
+	}
+
+	&.large {
+		@include can-toggle-appearance
+		(
+			130px, // Toggle width
+			38px,  // Toggle height
+			4px,   // Toggle border radius
+			2px,   // Offset (distance btw switch and box)
+			14px,  // Label font size
+			14px,  // Switch font size
+			0 4px 4px rgba(black, 0.4) // Switch shadow on hover/focus
+		); 
+	}
+	  
+	&.rounded {
+		@include can-toggle-branding
+		(
+			#444,  // Off state color
+			#3D76DC,  // On state color
+			rgba(#FFFFFF, 0.7),  // Off state text color
+			cubic-bezier(0.860, 0.000, 0.070, 1.000)  // Transition timing function
+		);
+		
+		@include can-toggle-appearance
+		(
+			120px, // Toggle width
+			38px,  // Toggle height
+			2rem,   // Toggle border radius
+			2px,   // Offset (distance btw switch and box)
+			13px,  // Label font size
+			13px,  // Switch font size
+			0 4px 4px rgba(black, 0.4) // Switch shadow on hover/focus
+		); 
+	}
+}
+
+
+@media all and (min-width: 700px) {
+	/* static */
+	.button-static {
+		min-width: 100px;
+	}
+	
+	.theme-toggle-check {
+		label {
+			.toggle-check__label-text {
+				
+			}
+		}
+	}
+	
+	.theme-button-group {
+		flex-direction: row;
+		width: auto;
+		
+		.button-group-right {
+			margin-left: auto;
+		}
+	}
+	
+	.button-icon {
+		.button-text {
+			display: inline-block;
+		}
+	}
+}
