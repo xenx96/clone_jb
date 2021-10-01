@@ -12,7 +12,7 @@
 * Dev Web 
   - 테스트 서버
     + http://localhost:? (Node.JS)
-    + http://localhost:? (미정)
+    + http://localhost:? (Publish)
 * DataBase
   - 테스트 서버
     + 구매 예정
