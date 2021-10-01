@@ -1,6 +1,6 @@
 /**
 * .modal
-* @author Won Kim
+* @author 
 *
 */
 ;(function( factory ) {
