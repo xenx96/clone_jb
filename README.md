@@ -11,7 +11,7 @@
 ## 개발 서버 현황
 * Dev Web 
   - 테스트 서버
-    + http://localhost:? (Node.JS)
+    + http://localhost:8080 (Node.JS)
     + http://localhost:? (미정)
 * DataBase
   - 테스트 서버
