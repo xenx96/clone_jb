@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon app"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "forever": "^4.0.1",
-    "nodemon": "^2.0.13"
+    "mongoose": "^6.0.9",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13",
+    "nunjucks": "^3.2.3"
   }
 }
