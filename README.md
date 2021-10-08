@@ -12,10 +12,9 @@
 * Dev Web 
   - 테스트 서버
     + http://localhost:8080 (Node.JS)
-    + http://localhost:? (미정)
 * DataBase
   - 테스트 서버
-    + 구매 예정
+    + 54.180.92.113:9004/clone_jb
 
 
 
