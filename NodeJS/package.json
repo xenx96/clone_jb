@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/xenx96/clone_jb#readme",
   "dependencies": {
+    "all": "0.0.0",
     "express": "^4.17.1",
     "forever": "^4.0.1",
     "mongoose": "^6.0.9",
