@@ -3,11 +3,9 @@
 - 참여 목적 : 새로운 프레임워크 체험 및 개발자 개인의 역량 향상을 위한 클론코딩   
 * Folder 
   - Front-End
-    + https://github.com/xenx96/clone_jb/tree/main/NodeJS/views (HTML)
-    + https://github.com/xenx96/clone_jb/tree/main/NodeJS/public (JS or CSS)
+    + https://github.com/xenx96/clone_jb (Publish)
   - Back-End
-    + https://github.com/xenx96/clone_jb/tree/main/NodeJS/schemas (Schemas)
-    + https://github.com/xenx96/clone_jb/tree/main/NodeJS/routes (Express-Router)
+    + https://github.com/xenx96/clone_jb (Node.JS)
     
 ***
 ## 개발 서버 현황
@@ -16,7 +14,7 @@
     + http://localhost:8080 (Node.JS)
 * DataBase
   - 테스트 서버
-    + 54.180.92.113:9004/clone_jb (MongoDB - 변경 가능)
+    + 54.180.92.113:9004/clone_jb
 
 
 
