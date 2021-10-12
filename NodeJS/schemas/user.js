@@ -3,30 +3,26 @@ const mongoose = require('mongoose');
 // schema
 const { Schema } = mongoose;
 const userSchema = new Schema({
-    ID : {type : String,
-        required :[true,'ID is Required!']},
-    PW : {type : String,
-        required :[true,'PW is Required!']},
-    NM: { // User Name
-        type: String,
-        required: [true, 'NM is required!'],
-    },
-    PN: { // Phone Number
-        type: String,
+    ID : {          // ID : 이메일 혹은 ID
+        type : String,
         unique: true,
+        required :[true,'ID is Required!']
     },
-    EM: { // Email
+    PW : {          // PW : 비밀번호
+        type : String,
+        required :[true,'PW is Required!']
+    },
+    OA: {           // OAuth : 플랫폼Oauth (0 =  직접, 1 = 카카오톡, 2 = 페이스북, 3 = 구글)
         type: String,
-        unique: true,
-        required: [true, 'EM is required!'],
+        required: [true, 'OAuth is required!']
     },
-    CA: { // Created At
+    CA: {           // CreateAt : 생성일자
         type: Date,
-        default: Date.now(),
+        required: [true, 'CreateAt is required!'],
+        default: Date.now()
     },
-    UA: { // Updated At
-        type: Date,
-        default: Date.now(),
+    UA: {           // UpdateAt : 수정일자
+        type: Date
     }
 }, { collection: 'user' });
 
