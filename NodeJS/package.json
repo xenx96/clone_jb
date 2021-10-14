@@ -19,6 +19,7 @@
   "homepage": "https://github.com/xenx96/clone_jb#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "forever": "^4.0.1",
     "mongoose": "^6.0.9",
     "morgan": "^1.10.0",

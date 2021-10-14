@@ -1,16 +1,16 @@
-const Company = require('../schemas/company');
-const bcrypt = require('bcrypt');
-const { findById } = require('../query/companyQuery');
+//import { create, findById as _findById } from '../schemas/company';
+import { hash } from 'bcrypt';
+import { Company as Cp } from '../query/companyQuery';
 
 router.post('/company', async (req, res, next) => {
     const companyForm = req.body;
     const CA = new Date();
     let msg = 'Success';
 
-    companyForm.PW = await bcrypt.hash(companyForm.PW);
+    companyForm.PW = await hash(companyForm.PW);
 
     try {
-        await Company.create({ companyForm, CA: CA });
+        await Cp.insert({ companyForm, CA: CA });
     } catch (e) {
         msg = 'Failed';
         console.error(e);
@@ -25,10 +25,10 @@ router.get('/company/id', (req, res, next) => {
     const id = req.body.id;
     let boolUsing = true;
     try {
-        if (Company.findById(id) == !null) {
+        if (Cp.findById(id) == !null) {
             boolUsing = false;
         }
-        res.json({ boolUsing });
+        res.status(200).json({ boolUsing });
     } catch (e) {
         console.error(e);
     }

@@ -9,13 +9,33 @@ class Company {
     };
     //Form is JSON or Map.
     updateBy_id = (ID, updateForm) => {
-        return Company.findByIdAndUpdate(ID, { $push: updateForm });
+        try {
+            Company.findByIdAndUpdate(ID, { $push: updateForm });
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
     };
+
     deleteBy_id = ID => {
-        return Company.findByIdAndDelete(ID);
+        try {
+            Company.findByIdAndDelete(ID);
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
     };
+    //
     Insert = insertForm => {
-        return Company.create(insertForm);
+        try {
+            Company.create(insertForm);
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
     };
 }
 module.exports = Company;
