@@ -1,20 +1,9 @@
 //import { create, findById as _findById } from '../schemas/company';
 import { hash } from 'bcrypt';
-import { Company as Cp } from '../query/companyQuery';
+import * as CQ from '../query/companyQuery';
+import * as CS from '../service/CompanyService';
 
-router.post('/company', async (req, res, next) => {
-    const companyForm = req.body;
-    const CA = new Date();
-    let msg = 'Success';
-
-    companyForm.PW = await hash(companyForm.PW);
-
-    try {
-        await Cp.insert({ companyForm, CA: CA });
-    } catch (e) {
-        msg = 'Failed';
-        console.error(e);
-    }
+router.post('/company', CS.signInUser, async (req, res, next) => {
     res.send(msg);
 });
 /**
@@ -25,7 +14,7 @@ router.get('/company/id', (req, res, next) => {
     const id = req.body.id;
     let boolUsing = true;
     try {
-        if (Cp.findById(id) == !null) {
+        if (CQ.findById(id) == !null) {
             boolUsing = false;
         }
         res.status(200).json({ boolUsing });
@@ -33,3 +22,5 @@ router.get('/company/id', (req, res, next) => {
         console.error(e);
     }
 });
+
+module.exports = router;

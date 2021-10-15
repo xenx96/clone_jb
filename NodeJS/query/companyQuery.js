@@ -1,41 +1,38 @@
-const Company = require('../schemas/company');
+import { findOne, findOneAndDelete, create, findOneAndUpdate } from '../schemas/company';
 
-class Company {
-    findBy_id = id => {
-        return Company.findById(id);
-    };
-    findByCID = CID => {
-        return Company.findOne({ CID });
-    };
-    //Form is JSON or Map.
-    updateBy_id = (ID, updateForm) => {
-        try {
-            Company.findByIdAndUpdate(ID, { $push: updateForm });
-            return true;
-        } catch (e) {
-            console.error(e);
-            return false;
-        }
-    };
+export const findByID = id => {
+    return findOne({ ID: id });
+};
 
-    deleteBy_id = ID => {
-        try {
-            Company.findByIdAndDelete(ID);
-            return true;
-        } catch (e) {
-            console.error(e);
-            return false;
-        }
-    };
-    //
-    Insert = insertForm => {
-        try {
-            Company.create(insertForm);
-            return true;
-        } catch (e) {
-            console.error(e);
-            return false;
-        }
-    };
-}
-module.exports = Company;
+export const findByCID = CID => {
+    return findOne({ CID });
+};
+//Form is JSON or Map.
+export const updateByID = (id, updateForm) => {
+    const UA = new Date.now();
+    updateForm.UA = UA;
+    try {
+        return findOneAndUpdate({ ID: id }, { updateForm }, { new: true });
+    } catch (e) {
+        console.error(e);
+        return e;
+    }
+};
+
+export const deleteByID = id => {
+    try {
+        return findOneAndDelete({ ID: id });
+    } catch (e) {
+        console.error(e);
+        return e;
+    }
+};
+//
+export const Insert = insertForm => {
+    try {
+        return create(insertForm);
+    } catch (e) {
+        console.error(e);
+        return e;
+    }
+};

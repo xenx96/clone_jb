@@ -5,6 +5,10 @@ const morgan = require('morgan'); //Logging Tools
 const path = require('path'); //path
 const connect = require('./schemas');
 const { swaggerUi, apecs, specs } = require('./swagger_test/swagger');
+
+//Import Router
+import companyRouter from './routes/company';
+
 /**
  * App.set
  * Setting App(express)! Like; Port or Engines etc..
@@ -20,6 +24,11 @@ connect();
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+/**
+ * CallBack Router.
+ */
+app.use('/company', companyRouter);
 
 /**
  * Set Router like; /join or /main
