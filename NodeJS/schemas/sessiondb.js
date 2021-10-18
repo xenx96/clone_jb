@@ -20,6 +20,12 @@ const sessiondbSchema = new Schema(
             type: Number,
             required: [true, 'Auth is Required!'],
         },
+        WL: {
+            //Where is Loggin :  로그인 위치(IP혹은 ComputerName)
+            type: String,
+            unique: false,
+            required: [true, 'Where is Loggin? is Required!'],
+        },
         CF: {
             // Config : 로그인 수단 (0 = 직접, 1 = 카카오, 2 = 페이스북, 3 = 구글, 부동산은 0)
             type: Number,
