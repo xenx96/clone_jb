@@ -9,7 +9,7 @@ router.post('/company', CS.signInUser, async (req, res, next) => {
     res.send(msg);
 });
 /**
- * Company ID 중복 조회 메서드.
+ * Company ID 중복 조회 메서드..
  */
 
 router.get('/company/id', (req, res, next) => {
