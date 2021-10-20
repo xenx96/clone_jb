@@ -30,15 +30,25 @@
 ***
 ## 2. 개발 계획
 ### 2.1 세부 계획
-```
+```js
 - 개발 기간 : 2021-09-28 ~
 - 세부 계획 및 기능 : 
 1. 개발 환경 구성
-2. 
+  1-1. Node-Version : 14.17.6
+  1-2. DB : AWS EC2 MongoDB
+  1-3. Server : AWS EC2(Ubuntu)
+
+2. 개발 계획
+  2-1. Design - 김보현
+  2-2. Front-End with Design - 이정재
+  2-3. Writing MiddleWare - 유대선, 임현호
+  2-4. Developing API - 유대선,임현호
 ```
 ### 2.2 현재 진행 상황 및 완료사항
-```sh
+```js
 예시) 1. 'A작업' 2021-09-28~진행중(혹은 완료시 날짜) - 완료자 및 진행자
+1. '공통 부분 MiddleWare(Session&JWT) 작성중' 2021-10-17~진행중 - 유대선
+2.  
 ```
 ***
 
