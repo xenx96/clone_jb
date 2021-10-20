@@ -1,33 +1,36 @@
 {
-  "name": "clone_jb",
-  "version": "1.0.0",
-  "description": "CloneCoding with RodaitCompany",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/xenx96/clone_jb.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xenx96/clone_jb/issues"
-  },
-  "homepage": "https://github.com/xenx96/clone_jb#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "forever": "^4.0.1",
-    "mongoose": "^6.0.9",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.13",
-    "nunjucks": "^3.2.3"
-  },
-  "devDependencies": {
-    "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.1.6"
-  }
+    "name": "clone_jb",
+    "version": "1.0.0",
+    "description": "CloneCoding with RodaitCompany",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xenx96/clone_jb.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/xenx96/clone_jb/issues"
+    },
+    "homepage": "https://github.com/xenx96/clone_jb#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "express": "^4.17.1",
+        "express-session": "^1.17.2",
+        "forever": "^4.0.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.0.9",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.13",
+        "nunjucks": "^3.2.3"
+    },
+    "devDependencies": {
+        "swagger-jsdoc": "^6.1.0",
+        "swagger-ui-express": "^4.1.6"
+    },
+    "type": "module"
 }

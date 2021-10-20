@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+const model = mongoose.model;
 
 // schema
 const { Schema } = mongoose;
@@ -46,4 +47,4 @@ const sessiondbSchema = new Schema(
     { collection: 'sessiondb' }
 );
 
-module.exports = mongoose.model('sessiondb', sessiondbSchema, 'sessiondb');
+export default model('sessiondb', sessiondbSchema, 'sessiondb');

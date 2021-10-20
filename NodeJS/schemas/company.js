@@ -1,5 +1,5 @@
-import mongoose, { model } from 'mongoose';
-
+import mongoose from 'mongoose';
+const model = mongoose.model;
 // schema
 const { Schema } = mongoose;
 const companySchema = new Schema(

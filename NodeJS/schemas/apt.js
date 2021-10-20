@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+const model = mongoose.model;
 
 // schema
 const { Schema } = mongoose;
@@ -62,4 +63,4 @@ const aptSchema = new Schema(
     { collection: 'apt' }
 );
 
-module.exports = mongoose.model('apt', aptSchema, 'apt');
+export default model('apt', aptSchema, 'apt');

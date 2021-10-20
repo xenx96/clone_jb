@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
+const model = mongoose.model;
 // schema
 const { Schema } = mongoose;
 const bigconSchema = new Schema(
@@ -67,4 +67,4 @@ const bigconSchema = new Schema(
     { collection: 'bigcon' }
 );
 
-module.exports = mongoose.model('bigcon', bigconSchema, 'bigcon');
+export default model('bigcon', bigconSchema, 'bigcon');

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
+const model = mongoose.model;
 // schema
 const { Schema } = mongoose;
 const opSchema = new Schema(

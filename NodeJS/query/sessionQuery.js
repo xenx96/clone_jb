@@ -1,4 +1,4 @@
-import * as SS from '../schemas/sessiondb';
+import * as SS from '../schemas/sessiondb.js';
 
 export const find = data => {
     try {

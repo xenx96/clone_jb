@@ -1,29 +1,33 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const nunjucks = require('nunjucks'); //Templates Engines.
-const morgan = require('morgan'); //Logging Tools
-const path = require('path'); //path
-const connect = require('./schemas');
-const { swaggerUi, apecs, specs } = require('./swagger_test/swagger');
+const statics = express.static;
+
+import nunjucks from 'nunjucks'; //Templates Engines.
+const { configure } = nunjucks;
+import morgan from 'morgan'; //Logging Tools
+import path, { join } from 'path'; //path
+const __dirname = path.resolve();
+import { connect } from './schemas/index.js';
+import { swaggerUI, specs } from './swagger_test/swagger.js';
 
 //Import Router
-import companyRouter from './routes/company';
-
+import companyRouter from './routes/company.js';
+import pageRouter from './routes/page.js';
 /**
  * App.set
  * Setting App(express)! Like; Port or Engines etc..
  */
 app.set('port', process.env.PORT || 8080);
 app.set('view engine', 'html');
-nunjucks.configure('views', {
+configure('views', {
     express: app,
     watch: true,
 });
 connect();
 
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use(statics(join(__dirname, 'public')));
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 /**
  * CallBack Router.
@@ -33,7 +37,6 @@ app.use('/company', companyRouter);
 /**
  * Set Router like; /join or /main
  */
-const pageRouter = require('./routes/page');
 
 app.use('/', pageRouter);
 

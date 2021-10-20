@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const connect = () => {
+export const connect = () => {
     if (process.env.NODE_ENV !== 'production') {
         mongoose.set('debug', true);
     }
@@ -12,11 +12,10 @@ const connect = () => {
         }
     });
 };
+
 mongoose.connection.on('error', error => {
     console.error('DB Error', error);
 });
 mongoose.connection.on('disconnected', () => {
     console.error('DB is Disconnected! Retry to Connect DB!');
 });
-
-module.exports = connect;
