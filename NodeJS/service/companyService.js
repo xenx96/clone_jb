@@ -15,12 +15,18 @@ export const signInUser = async (req, res, next) => {
     }
 };
 
-export const idCheck = (req, res, next) => {
-    const id = req.body.id;
-    return CQ.findByID(id) == null;
+const msg = '사용 가능합니다.';
+
+export const idCheck = async id => {
+    if ((await CQ.findByID(id)) == null) {
+        return msg;
+    }
+    throw '이미 사용중인 아이디입니다.';
 };
 
-export const CIDCheck = (req, res, next) => {
-    const CID = req.body.CID;
-    return CQ.findByCID(CID) == null;
+export const CIDCheck = async CID => {
+    if ((await CQ.findByCID(CID)) == null) {
+        return msg;
+    }
+    throw '이미 사용중인 부동산 등록번호 입니다.';
 };

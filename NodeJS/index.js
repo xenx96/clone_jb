@@ -13,6 +13,7 @@ import { swaggerUI, specs } from './swagger_test/swagger.js';
 //Import Router
 import companyRouter from './routes/company.js';
 import pageRouter from './routes/page.js';
+import loginRouter from './routes/login.js';
 /**
  * App.set
  * Setting App(express)! Like; Port or Engines etc..
@@ -32,13 +33,14 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 /**
  * CallBack Router.
  */
-app.use('/company', companyRouter);
 
 /**
  * Set Router like; /join or /main
  */
 
 app.use('/', pageRouter);
+app.use('/company', companyRouter);
+app.use('/login', loginRouter);
 
 app.use(function (req, res, next) {
     const error = new Error(`${req.method}${req.url} NO Router`);
