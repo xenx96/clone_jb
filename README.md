@@ -14,7 +14,7 @@
     + http://localhost:8080 (Node.JS)
 * DataBase
   - 테스트 서버
-    + 54.180.92.113:9004/clone_jb
+    + 13.125.207.95:9004/clone_jb
 
 
 
