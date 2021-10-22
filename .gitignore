@@ -1,0 +1,6 @@
+## IGNORE FIle
+
+*.log
+*.bak
+/NODEJS/node_modules
+/NODEJS/.vscode
