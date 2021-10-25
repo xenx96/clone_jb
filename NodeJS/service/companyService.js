@@ -1,26 +1,32 @@
 //import Express from 'express';
 //const router = Express().router;
+import * as hash from '../middleware/bcryptHash.js';
 import * as CQ from '../query/companyQuery.js';
 
-export const signInUser = async (req, res, next) => {
+export const signInUser = async (req, res) => {
     const companyForm = req.body;
-    const CA = new Date();
-    companyForm.PW = await hash(companyForm.PW);
     try {
-        await Cp.insert({ companyForm, CA: CA });
-        res.send(true);
+        var hashedPW = await hash.encodeHash(companyForm.PW);
+        companyForm.PW = hashedPW;
+        res.send(CQ.Insert(companyForm));
     } catch (e) {
         console.error(e);
         res.send(false);
     }
 };
 
-export const idCheck = (req, res, next) => {
-    const id = req.body.id;
-    return CQ.findByID(id) == null;
+const msg = '사용 가능합니다.';
+
+export const idCheck = async id => {
+    if ((await CQ.findByID(id)) == null) {
+        return msg;
+    }
+    throw '이미 사용중인 아이디입니다.';
 };
 
-export const CIDCheck = (req, res, next) => {
-    const CID = req.body.CID;
-    return CQ.findByCID(CID) == null;
+export const CIDCheck = async CID => {
+    if ((await CQ.findByCID(CID)) == null) {
+        return msg;
+    }
+    throw '이미 사용중인 부동산 등록번호 입니다.';
 };

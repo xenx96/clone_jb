@@ -1,0 +1,39 @@
+components:
+    schemas:
+        company:
+            type: object
+            required:
+                - CID
+                - ID
+                - PW
+                - NM
+                - ADR
+                - PN
+            properties:
+                CID:
+                    type: string
+                    unique: true
+                    required: true
+                    description: Company ID
+                ID:
+                    type: string
+                    unique: true
+                PW:
+                    type: string
+                    required: true
+                NM:
+                    type: string
+                    required: true
+                ADR:
+                    type: string
+                    required: true
+                PN:
+                    type: string
+                    required: true
+            example:
+                CID: Company_Number
+                ID: User_ID
+                PW: Password
+                NM: Name
+                ADR: Address
+                PN: PhoneNumber
