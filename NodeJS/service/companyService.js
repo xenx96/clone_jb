@@ -7,7 +7,7 @@ export const signInUser = async (req, res) => {
     const companyForm = req.body;
     try {
         var hashedPW = await hash.encodeHash(companyForm.PW);
-        console.log(hashedPW);
+        companyForm.PW = hashedPW;
         res.send(CQ.Insert(companyForm));
     } catch (e) {
         console.error(e);
