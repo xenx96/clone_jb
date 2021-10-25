@@ -19,24 +19,11 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:3030/company',
+                url: 'http://localhost:8080/',
             },
         ],
     },
-    apis: ['./swagger_test/service/*.YAML'],
+    apis: ['./swagger_test/service/*'],
 };
-/*const options = {
-    swaggerDefinition: {
-        info: {
-            title: 'Test API',
-            version: '1.0.0',
-            description: 'Test API with express',
-        },
-        host: 'localhost:3300',
-        basePath: '/',
-    },
-    apis: ['./routes/*.js', './swagger/*'],
-};
-*/
 export const specs = swaggereJsdoc(options);
 export const swaggerUI = swaggerUi;

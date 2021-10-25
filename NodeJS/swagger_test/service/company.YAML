@@ -1,44 +1,39 @@
-/**
-* @swagger
-* components :
-*    schemas:
-*        company : 
-*            type : object
-*            required : 
-*              - CID
-*              - ID
-*              - PW
-*              - NM
-*              - ADR
-*              - PN
-*              - CA
-*              - UA
-*            properties :
-*              CID :
-*                type : string
-*                unque : true
-*                required : true
-*              ID : 
-*               type : string
-*                unique : true
-*              PW :
-*                type : string
-*                required : true
-*              NM : 
-*                type : string
-*                required : true
-*              ADR :
-*                type : string
-*                required : true
-*              PN :
-*                type : string
-*                required : true
-*              CA :
-*                type : Date
-*               required : true
-*              UA : 
-*                type : Date
-*                required : true
-*
-*
-*/
+components:
+    schemas:
+        company:
+            type: object
+            required:
+                - CID
+                - ID
+                - PW
+                - NM
+                - ADR
+                - PN
+            properties:
+                CID:
+                    type: string
+                    unique: true
+                    required: true
+                    description: Company ID
+                ID:
+                    type: string
+                    unique: true
+                PW:
+                    type: string
+                    required: true
+                NM:
+                    type: string
+                    required: true
+                ADR:
+                    type: string
+                    required: true
+                PN:
+                    type: string
+                    required: true
+            example:
+                CID: Company_Number
+                ID: User_ID
+                PW: Password
+                NM: Name
+                ADR: Address
+                PN: PhoneNumber

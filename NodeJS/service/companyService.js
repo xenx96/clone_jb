@@ -1,15 +1,14 @@
 //import Express from 'express';
 //const router = Express().router;
-
+import * as hash from '../middleware/bcryptHash.js';
 import * as CQ from '../query/companyQuery.js';
 
-export const signInUser = async (req, res, next) => {
+export const signInUser = async (req, res) => {
     const companyForm = req.body;
-    const CA = new Date();
-    companyForm.PW = await hash(companyForm.PW);
     try {
-        await Cp.insert({ companyForm, CA: CA });
-        res.send(true);
+        var hashedPW = await hash.encodeHash(companyForm.PW);
+        console.log(hashedPW);
+        res.send(CQ.Insert(companyForm));
     } catch (e) {
         console.error(e);
         res.send(false);

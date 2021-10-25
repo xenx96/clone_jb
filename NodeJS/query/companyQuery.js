@@ -1,4 +1,5 @@
-import * as CP from '../schemas/company.js';
+import * as company from '../schemas/company.js';
+const CP = company.model;
 
 export const findByID = id => {
     return CP.findOne({ ID: id });
