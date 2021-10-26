@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-const model = mongoose.model;
 // schema
 const { Schema } = mongoose;
 const companySchema = new Schema(
@@ -50,4 +49,4 @@ const companySchema = new Schema(
     { collection: 'company' }
 );
 
-export default model('company', companySchema, 'company');
+export const model = mongoose.model('company', companySchema, 'company');

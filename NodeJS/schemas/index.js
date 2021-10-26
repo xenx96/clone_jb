@@ -4,7 +4,7 @@ export const connect = () => {
     if (process.env.NODE_ENV !== 'production') {
         mongoose.set('debug', true);
     }
-    mongoose.connect('mongodb://3.37.221.165:9004/clone_jb', error => {
+    mongoose.connect('mongodb://13.125.207.95:9004/clone_jb', {}, error => {
         if (error) {
             console.log('DB Connection is Error', error);
         } else {
