@@ -1,0 +1,46 @@
+tags:
+  name: Company
+  description: 부동산사무소 관련 REST API
+
+paths:
+  /company:
+    get:
+      summary: Lists all the companies
+      tags: [Company]
+      responses:
+        "200":
+          description: The list of Companies.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/company"
+    post:
+      summary: Creates a new Company
+      tags: [Company]
+      responses:
+        "200":
+          description: The created Company.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/company"
+  /company/cid:
+    get:
+      summary: Lists of realEstate
+      tags: [Company]
+      parameters:
+        - in: query
+          name: CNM
+          schema:
+            type: string
+          description: Company Name is CNM
+        - in: query
+          name: NM
+          schema:
+            type: string
+          description: Company Boss Name
+      responses:
+        "200":
+          description: The List of CID
