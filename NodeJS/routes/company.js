@@ -22,10 +22,10 @@ router.get("/id", (req, res, next) => {
   }
 });
 
-router.post("/cid", (req, res, next) => {
-  console.log(req.body);
-  const companyName = req.body.CNM;
-  const boss = req.body.NM;
+router.get("/cid", (req, res, next) => {
+  console.log(req.query);
+  const companyName = req.query.CNM;
+  const boss = req.query.NM;
   try {
     //CS.CIDCheck(CID);
     res.json(getDataRealEstate(boss, companyName));
