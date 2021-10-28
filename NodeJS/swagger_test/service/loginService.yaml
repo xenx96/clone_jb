@@ -1,0 +1,28 @@
+tags:
+  name: Login
+  description: 부동산사무소 관련 Login REST API
+
+paths:
+  /login/company:
+    get:
+      summary: Go to Login Site.
+      tags: [Login]
+      responses:
+        "200":
+          description: The list of Companies.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/loginCompany"
+    post:
+      summary: Creates a new Company
+      tags: [Login]
+      responses:
+        "200":
+          description: Testing Login Posting.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/loginCompany"
