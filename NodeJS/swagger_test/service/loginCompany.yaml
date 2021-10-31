@@ -1,0 +1,17 @@
+components:
+  schemas:
+    loginCompany:
+      type: object
+      required:
+        - ID
+        - PW
+      properties:
+        ID:
+          type: string
+          unique: true
+        PW:
+          type: string
+          required: true
+      example:
+        ID: User_ID
+        PW: Password
